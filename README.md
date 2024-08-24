@@ -394,6 +394,16 @@ The `UserServiceImpl` class manages users and integrates hotel and rating data:
   - **Endpoint**: `DELETE /v1/ratings/{rating_id}`
   - **Description**: Delete a rating by ID.
 
+### Data Format Support
+
+This application supports both JSON and XML data formats. The `jackson-dataformat-xml` dependency is included to handle XML data. You can request and receive data in either format by specifying the appropriate `Content-Type` and `Accept` headers in your HTTP requests.
+  ```bash
+    localhost:8080/v1/users?media=xml
+  ```
+  ```bash
+    localhost:8080/v1/users?media=json
+  ```
+
 ## Troubleshooting
 - **Service Not Registered**: Ensure the Service Registry (Eureka) is running and the services are correctly configured to register with Eureka.
 - **Configuration Not Loaded**: Verify that the Config Server is up and running and the microservices are correctly pointed to the Config Server.
